@@ -1,0 +1,17 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.Language>>
+@section Title {
+Languages
+}
+<h2>
+    Languages</h2>
+<ul>
+    @foreach (var lang in Model.ModelParameter)
+    { 
+        <li>
+            <div>
+                Name:@lang.Name</div>
+            <div>
+                CalculatedBytes:@lang.CalculatedBytes</div>
+        </li>
+    }
+</ul>

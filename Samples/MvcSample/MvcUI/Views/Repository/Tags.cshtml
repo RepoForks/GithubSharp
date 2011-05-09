@@ -1,0 +1,25 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.TagOrBranch>>
+@section Title {
+Tags
+}
+<h2>
+    Tags</h2>
+@if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0)
+{ 
+    <ul>
+        @foreach (var lang in Model.ModelParameter)
+        { 
+            <li>
+                <div>
+                    Name:@lang.Name</div>
+                <div>
+                    Sha:@lang.Sha</div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <h4>
+        No tags found..</h4>
+}

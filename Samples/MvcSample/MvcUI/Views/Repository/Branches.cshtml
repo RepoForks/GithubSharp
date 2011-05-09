@@ -1,0 +1,17 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.TagOrBranch>>
+@section Title {
+Branches
+}
+<h2>
+    Branches</h2>
+<ul>
+    @foreach (var lang in Model.ModelParameter)
+    { 
+        <li>
+            <div>
+                Name:@lang.Name</div>
+            <div>
+                Sha:@lang.Sha</div>
+        </li>
+    }
+</ul>

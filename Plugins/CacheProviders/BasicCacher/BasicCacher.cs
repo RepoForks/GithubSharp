@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using GithubSharp.Core.Services;
 
-namespace BasicCacher
+namespace GithubSharp.Plugins.CacheProviders.BasicCacher
 {
     public class BasicCacher : ICacheProvider
     {

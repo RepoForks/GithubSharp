@@ -5,20 +5,19 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{5EB1DF0E-EDBD-44EB-8A63-070F13A5D0EE}</ProjectGuid>
+    <ProjectGuid>{8BC17E7F-FA5A-4F6C-B8A2-F50E58AF8343}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GithubSharp.Plugins.CacheProviders.BasicCacher</RootNamespace>
-    <AssemblyName>GithubSharp.Plugins.CacheProviders.BasicCacher</AssemblyName>
+    <RootNamespace>GithubSharp.Plugins.LogProviders.NullOrCustomLogProvider</RootNamespace>
+    <AssemblyName>GithubSharp.Plugins.LogProviders.NullOrCustomLogProvider</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -40,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BasicCacher.cs" />
+    <Compile Include="NullOrCustomLogProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -1,0 +1,161 @@
+@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.Repository>>
+@section Title {
+List
+}
+<h2>
+    User repositories
+</h2>
+<p>
+    @Html.ActionLink("Back to Search", "Index")
+</p>
+@if (Model.ModelParameter == null || Model.ModelParameter.Count() == 0)
+{
+    <div class="error">
+        No repositories found</div>
+}
+else
+{
+    <table>
+        <tr>
+            <th>
+            </th>
+            <th>
+                url
+            </th>
+            <th>
+                description
+            </th>
+            <th>
+                homepage
+            </th>
+            <th>
+                name
+            </th>
+            <th>
+                owner
+            </th>
+            <th>
+                fork
+            </th>
+            <th>
+                private
+            </th>
+            <th>
+                open_issues
+            </th>
+            <th>
+                watchers
+            </th>
+            <th>
+                forks
+            </th>
+            <th>
+                WatchersURL
+            </th>
+            <th>
+                DownloadURL
+            </th>
+            <th>
+                ForksURL
+            </th>
+            <th>
+                IssuesURL
+            </th>
+            <th>
+                WikiURL
+            </th>
+            <th>
+                GraphsURL
+            </th>
+            <th>
+                ForkQuoueURL
+            </th>
+            <th>
+                GitCloneURL
+            </th>
+            <th>
+                HttpCloneURL
+            </th>
+            <th>
+                ForkURL
+            </th>
+            <th>
+                WatchURL
+            </th>
+        </tr>
+        @foreach (var item in Model.ModelParameter)
+        {
+            <tr>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+                    |
+                    @Html.ActionLink("Details", "Get", new { RepositoryName = item.Name, Username = item.Owner })
+                    @Html.If(Model.CurrentUser != null && item.Owner == Model.CurrentUser.Name, () => Html.ActionLink("Delete", "Delete", new { RepositoryName = item.Name, Username = item.Owner }))
+                </td>
+                <td>
+                    @item.URL
+                </td>
+                <td>
+                    @item.Description
+                </td>
+                <td>
+                    @item.Homepage
+                </td>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Owner
+                </td>
+                <td>
+                    @item.Fork
+                </td>
+                <td>
+                    @item.Private
+                </td>
+                <td>
+                    @item.OpenIssues
+                </td>
+                <td>
+                    @item.Watchers
+                </td>
+                <td>
+                    @item.Forks
+                </td>
+                <td>
+                    @item.WatchersURL
+                </td>
+                <td>
+                    @item.DownloadURL
+                </td>
+                <td>
+                    @item.ForksURL
+                </td>
+                <td>
+                    @item.IssuesURL
+                </td>
+                <td>
+                    @item.WikiURL
+                </td>
+                <td>
+                    @item.GraphsURL
+                </td>
+                <td>
+                    @item.ForkQuoueURL
+                </td>
+                <td>
+                    @item.GitCloneURL
+                </td>
+                <td>
+                    @item.HttpCloneURL
+                </td>
+                <td>
+                    @item.ForkURL
+                </td>
+                <td>
+                    @item.WatchURL
+                </td>
+            </tr>
+        }
+    </table>
+}

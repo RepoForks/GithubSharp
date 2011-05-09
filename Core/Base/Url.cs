@@ -17,7 +17,7 @@ namespace GithubSharp.Core.Base
         internal ICacheProvider CacheProvider;
         internal ILogProvider LogProvider;
 
-        internal string GithubBaseURL { get { return "http://github.com/api/v2/json/"; } }
+        internal string GithubBaseURL { get { return "https://api.github.com/"; } }
 
         internal string GithubAuthenticationQueryString(Models.GithubUser User)
         {
@@ -141,5 +141,52 @@ namespace GithubSharp.Core.Base
             return result;
         }
 
+        internal string UploadObjectAndGetString<T>(T obj, string URL)
+        {
+            return UploadObjectAndGetString<T>(obj, URL, "POST");
+        }
+
+        internal string UploadObjectAndGetString<T>(T obj, string URL, string Method)
+        {
+            var objJsonString = obj.ToJson<T>();
+
+
+            LogProvider.LogMessage(
+                string.Format("Url.UploadObjectAndGetString ({0}) {1}",
+                              URL,
+                              objJsonString));
+
+            string cacheKey = string.Format("UploadObjectAndGetString{0}_{1}_{2}",
+                                            URL,
+                                            Method,
+                                            objJsonString);
+
+            var cached = CacheProvider.Get<string>(cacheKey);
+            if (cached != null)
+            {
+                LogProvider.LogMessage("Url.UploadObjectAndGetString  :  Returning cached result");
+                return cached;
+            }
+
+            LogProvider.LogMessage(
+                "Url.UploadObjectAndGetString  :  Cached result unavailable, fetching url content");
+
+
+            var webClient = new System.Net.WebClient();
+            string result;
+            try
+            {
+                result = webClient.UploadString(URL, Method, objJsonString);
+            }
+            catch (Exception error)
+            {
+                if (LogProvider.HandleAndReturnIfToThrowError(error))
+                    throw;
+                return null;
+            }
+
+            CacheProvider.Set(result, cacheKey);
+            return result;
+        }
     }
 }

@@ -6,6 +6,7 @@ namespace GithubSharp.Core
     public class GithubURLs
     {
         public Models.GithubUser User { get; set; }
+        private const string GithubBaseURL = "https://api.github.com/";
         private string _LoginString
         {
             get
@@ -18,11 +19,12 @@ namespace GithubSharp.Core
 
         public string Repositories(string User)
         {
-            return string.Format("http://github.com/api/v2/xml/repos/show/{0}{1}", User, _LoginString);
+            return string.Format("{0}repos/show/{1}{3}", GithubBaseURL, User, _LoginString);
         }
+
         public string Repository(string User, string Repository)
         {
-            return string.Format("http://github.com/api/v2/xml/repos/show/{0}/{1}{2}", User, Repository, _LoginString);
+            return string.Format("{0}repos/show/{1}/{2}{3}", GithubBaseURL, User, Repository, _LoginString);
         }
 
         public string RawFile(string User, string Repository, string File)
@@ -42,12 +44,12 @@ namespace GithubSharp.Core
 
         public string Commits(string User, string Repository, string BranchName)
         {
-            return string.Format("http://github.com/api/v2/xml/commits/list/{0}/{1}/{2}{3}", User, Repository, BranchName, _LoginString);
+            return string.Format("{0}commits/list/{1}/{2}/{3}{4}", GithubBaseURL, User, Repository, BranchName, _LoginString);
         }
 
         public string BlobOrTree(string User, string Repository, string BlobOrThreeSha)
         {
-            return string.Format("http://github.com/api/v2/xml/blob/show/{0}/{1}/{2}{3}", User, Repository, BlobOrThreeSha, _LoginString);
+            return string.Format("{0}blob/show/{1}/{2}/{3}{4}", GithubBaseURL, User, Repository, BlobOrThreeSha, _LoginString);
         }
     }
 }

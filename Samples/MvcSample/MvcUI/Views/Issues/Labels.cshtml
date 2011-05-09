@@ -1,0 +1,22 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<IENumerable<string>>
+@section Title {
+Labels
+}
+<h2>
+    Labels</h2>
+@if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0)
+{ 
+    <ul>
+        @foreach (var label in Model.ModelParameter)
+        { 
+            <li>
+                @label
+            </li>
+        }
+    </ul>
+}
+else
+{ 
+    <h4>
+        No labels found</h4>
+}

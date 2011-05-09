@@ -1,0 +1,100 @@
+@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<GithubSharp.Core.Models.Repository>
+@section Title {
+Get
+}
+<h2>
+    Repository Details</h2>
+<p>
+    @Html.ActionLink("Back to Search", "Index")
+    @Html.If(Model.CurrentUser != null && Model.ModelParameter.Owner == Model.CurrentUser.Name, () =>
+    string.Format(" | {0} | {1} ",
+        Html.ActionLink("Delete", "Delete", new { RepositoryName = Model.ModelParameter.Name, Username = Model.ModelParameter.Owner }),
+        Html.ActionLink("Edit", "Edit", new { /* id=Model.ModelParameter.PrimaryKey */ })), () => Html.ActionLink("Fork", "Fork", new { RepositoryName = Model.ModelParameter.Name, Username = Model.ModelParameter.Owner }))
+</p>
+<fieldset>
+    <legend>Fields</legend>
+    <p>
+        url:
+        @Model.ModelParameter.URL
+    </p>
+    <p>
+        description:
+        @Model.ModelParameter.Description
+    </p>
+    <p>
+        homepage:
+        @Model.ModelParameter.Homepage
+    </p>
+    <p>
+        name:
+        @Model.ModelParameter.Name
+    </p>
+    <p>
+        owner:
+        @Model.ModelParameter.Owner
+    </p>
+    <p>
+        fork:
+        @Model.ModelParameter.Fork
+    </p>
+    <p>
+        private:
+        @Model.ModelParameter.Private
+    </p>
+    <p>
+        open_issues:
+        @Model.ModelParameter.OpenIssues
+    </p>
+    <p>
+        watchers:
+        @Model.ModelParameter.Watchers
+    </p>
+    <p>
+        forks:
+        @Model.ModelParameter.Forks
+    </p>
+    <p>
+        WatchersURL:
+        @Model.ModelParameter.WatchersURL
+    </p>
+    <p>
+        DownloadURL:
+        @Model.ModelParameter.DownloadURL
+    </p>
+    <p>
+        ForksURL:
+        @Model.ModelParameter.ForksURL
+    </p>
+    <p>
+        IssuesURL:
+        @Model.ModelParameter.IssuesURL
+    </p>
+    <p>
+        WikiURL:
+        @Model.ModelParameter.WikiURL
+    </p>
+    <p>
+        GraphsURL:
+        @Model.ModelParameter.GraphsURL
+    </p>
+    <p>
+        ForkQuoueURL:
+        @Model.ModelParameter.ForkQuoueURL
+    </p>
+    <p>
+        GitCloneURL:
+        @Model.ModelParameter.GitCloneURL
+    </p>
+    <p>
+        HttpCloneURL:
+        @Model.ModelParameter.HttpCloneURL
+    </p>
+    <p>
+        ForkURL:
+        @Model.ModelParameter.ForkURL
+    </p>
+    <p>
+        WatchURL:
+        @Model.ModelParameter.WatchURL
+    </p>
+</fieldset>

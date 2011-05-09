@@ -1,0 +1,25 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.Repository>>
+@section Title {
+Network
+}
+<h2>
+    Network</h2>
+@if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0)
+{ 
+    <ul>
+        @foreach (var network in Model.ModelParameter)
+        { 
+            <li>
+                <div>
+                    Name:@network.Name</div>
+                <div>
+                    Owner:@network.Owner</div>
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <h4>
+        No forks found..</h4>
+}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace GithubSharp.Core.Models
@@ -9,8 +10,10 @@ namespace GithubSharp.Core.Models
         [DataMember(Name = "number")]
         public int Number { get; set; }
 
+        /*
         [DataMember(Name = "votes")]
         public int Votes { get; set; }
+        */
 
         [DataMember(Name = "created_at")]
         private string PrivateCreatedAt
@@ -39,10 +42,10 @@ namespace GithubSharp.Core.Models
         public DateTime? ClosedAt { get; set; }
 
         [DataMember(Name = "user")]
-        public string User { get; set; }
+        public UserFromIssue User { get; set; }
 
         [DataMember(Name = "labels")]
-        public string[] Labels { get; set; }                
+        public IEnumerable<Label> Labels { get; set; }
 
         [DataMember(Name = "state")] //EnumMember does not work?
         public string State { get; set; }
@@ -50,12 +53,41 @@ namespace GithubSharp.Core.Models
         [DataMember(Name = "comments")]
         public int Comments { get; set; }
 
+        /*
         [DataMember(Name = "position")]
         public double Position { get; set; }
-
+        */
         [DataMember(Name = "html_url")]
         public string HtmlUrl { get; set; }
-        
+
+    }
+
+    [DataContract]
+    public class Label
+    {
+        [DataMember(Name = "url")]
+        public string Url { get; set; }
+
+        [DataMember(Name = "color")]
+        public string Color { get; set; }
+
+        [DataMember(Name = "name")]
+        public string Name { get; set; }
+    }
+
+    [DataContract]
+    public class UserFromIssue
+    {
+        [DataMember(Name = "url")]
+        public string Url { get; set; }
+
+        [DataMember(Name = "gravatar_url")]
+        public string GravatarUrl { get; set; }
+
+        [DataMember(Name = "login")]
+        public string Login { get; set; }
+
+        public string BrowsableUrl { get { return string.Format("https://github.com/{0}", this.Login); } }
     }
 
     [DataContract]
@@ -63,7 +95,7 @@ namespace GithubSharp.Core.Models
     {
         [EnumMember(Value = "open")]
         Open,
-        [EnumMember(Value= "closed")]
+        [EnumMember(Value = "closed")]
         Closed
     }
 

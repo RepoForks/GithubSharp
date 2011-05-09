@@ -1,0 +1,29 @@
+@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.RepositoryFromSearch>>
+@section Title {
+Search
+}
+<h2>
+    Search</h2>
+@using (Html.BeginForm(new { action = "Search" }))
+{
+    @Html.TextBox("id")
+    <button type="submit">
+        GO</button>
+    <div>
+        @Html.ActionLink("Create New", "Create")</div>
+}
+<hr />
+@if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0)
+{
+    foreach (var repo in Model.ModelParameter)
+    {
+    <h3>
+        @repo.Name</h3>
+    <p>
+        @repo.Description</p>
+    <h4>
+        @Html.ActionLink(repo.Username, "List", new { id = repo.Username })</h4>
+    <div>
+        @Html.ActionLink("Details", "Get", new { RepositoryName = repo.Name, Username = repo.Username })</div>
+    }
+}

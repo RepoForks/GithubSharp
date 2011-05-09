@@ -1,0 +1,22 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.Issue>>
+@section Title {
+List
+}
+<h2>
+    List</h2>
+@if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0)
+{
+    <ul>
+        @foreach (var issue in Model.ModelParameter)
+        {
+            <li>
+                @Html.Partial("Issue", issue)
+            </li>
+        }
+    </ul>
+}
+else
+{ 
+    <h4>
+        No issues found</h4>
+}

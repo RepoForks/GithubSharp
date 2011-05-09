@@ -1,0 +1,29 @@
+﻿@model GithubSharp.MvcSample.MvcApplication.Models.ViewModels.BaseViewModel<System.Collections.Generic.IEnumerable<GithubSharp.Core.Models.Comment>>
+@section Title {
+Comments
+}
+<h2>
+    Comments</h2>
+if (Model.ModelParameter != null && Model.ModelParameter.Count() > 0) {
+<ul>
+    @foreach (var comment in Model.ModelParameter)
+    { 
+        <li>
+            <div class="comment">
+                <h5>
+                    <em>#@comment.Id</em></h5>
+                <div>
+                    @comment.Body</div>
+                <div>
+                    Created :
+                    @comment.CreatedAt
+                    by :
+                    @comment.User</div>
+            </div>
+        </li>
+    }
+</ul>
+} else {
+<h4>
+    No comments found</h4>
+} 

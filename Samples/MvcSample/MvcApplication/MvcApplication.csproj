@@ -103,9 +103,9 @@
       <Project>{4CF09821-4DF8-4DFE-B22E-3EBAE4A01C33}</Project>
       <Name>WebCache</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Plugins\LogProviders\SimpleLogProvider\SimpleLogProvider.csproj">
-      <Project>{26AB1C43-34F7-446C-A514-EB0E38730631}</Project>
-      <Name>SimpleLogProvider</Name>
+    <ProjectReference Include="..\..\..\Plugins\LogProviders\NullOrCustomLogProvider\NullOrCustomLogProvider.csproj">
+      <Project>{8BC17E7F-FA5A-4F6C-B8A2-F50E58AF8343}</Project>
+      <Name>NullOrCustomLogProvider</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
