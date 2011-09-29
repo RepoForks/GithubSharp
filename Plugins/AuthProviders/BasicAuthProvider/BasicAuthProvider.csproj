@@ -5,11 +5,11 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>8.0.30703</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{568AA29A-07BC-4145-B74C-C16E5A7A0C33}</ProjectGuid>
+    <ProjectGuid>{17C5B501-C103-44E3-974E-DD209DEE3BB3}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>GithubSharp.Plugins.CacheProviders.DoNotCacher</RootNamespace>
-    <AssemblyName>GithubSharp.Plugins.CacheProviders.DoNotCacher</AssemblyName>
+    <RootNamespace>GithubSharp.Plugins.AuthProviders.BasicAuthProvider</RootNamespace>
+    <AssemblyName>GithubSharp.Plugins.AuthProviders.BasicAuthProvider</AssemblyName>
     <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -17,7 +17,7 @@
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
-    <OutputPath>..\..\..\bin\</OutputPath>
+    <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
@@ -39,7 +39,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DoNotCacher.cs" />
+    <Compile Include="BasicAuthProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

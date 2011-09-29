@@ -25,7 +25,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "MvcSample", "MvcSample", "{
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MvcUI", "Samples\MvcSample\MvcUI\MvcUI.csproj", "{33D4B918-DCF3-4A85-A353-ED141ECF7E3B}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_READMES", "_READMES", "{A80BD636-8C82-49C2-A519-D73D26A30C3E}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Readme", "Readme", "{A80BD636-8C82-49C2-A519-D73D26A30C3E}"
 	ProjectSection(SolutionItems) = preProject
 		NOTES = NOTES
 		README = README
@@ -38,6 +38,17 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NullOrCustomLogProvider", "Plugins\LogProviders\NullOrCustomLogProvider\NullOrCustomLogProvider.csproj", "{8BC17E7F-FA5A-4F6C-B8A2-F50E58AF8343}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DoNotCacher", "Plugins\CacheProviders\DoNotCacher\DoNotCacher.csproj", "{568AA29A-07BC-4145-B74C-C16E5A7A0C33}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{22AE4237-34DE-41B8-9A8B-83885E1F6E7B}"
+	ProjectSection(SolutionItems) = preProject
+		nuget\GithubSharp.Core.nuspec = nuget\GithubSharp.Core.nuspec
+		nuget\GithubSharp.nuspec = nuget\GithubSharp.nuspec
+		nuget\GithubSharp.Plugins.All.nuspec = nuget\GithubSharp.Plugins.All.nuspec
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "AuthProviders", "AuthProviders", "{376E85B6-6E9D-43F1-903F-CB6F4305512A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BasicAuthProvider", "Plugins\AuthProviders\BasicAuthProvider\BasicAuthProvider.csproj", "{17C5B501-C103-44E3-974E-DD209DEE3BB3}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -149,6 +160,16 @@ Global
 		{568AA29A-07BC-4145-B74C-C16E5A7A0C33}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{568AA29A-07BC-4145-B74C-C16E5A7A0C33}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{568AA29A-07BC-4145-B74C-C16E5A7A0C33}.Release|x86.ActiveCfg = Release|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Release|Mixed Platforms.Build.0 = Release|Any CPU
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -156,6 +177,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{01BD6AE7-2049-46C4-94CE-A5105F8CFD16} = {0EED7BE0-C7EA-4A7F-BA45-7108319EC034}
 		{D8F2FC78-7E9E-4F07-86BB-0E0DE31049E9} = {0EED7BE0-C7EA-4A7F-BA45-7108319EC034}
+		{376E85B6-6E9D-43F1-903F-CB6F4305512A} = {0EED7BE0-C7EA-4A7F-BA45-7108319EC034}
 		{44196ED8-BD8F-4D50-A906-A3B038F00570} = {01BD6AE7-2049-46C4-94CE-A5105F8CFD16}
 		{4CF09821-4DF8-4DFE-B22E-3EBAE4A01C33} = {01BD6AE7-2049-46C4-94CE-A5105F8CFD16}
 		{5EB1DF0E-EDBD-44EB-8A63-070F13A5D0EE} = {01BD6AE7-2049-46C4-94CE-A5105F8CFD16}
@@ -167,6 +189,7 @@ Global
 		{59C24364-8C00-46AD-9CE6-1D5630656DF9} = {6B0D97D9-DFA2-4BD5-99A7-D3866E37A55F}
 		{308EBC64-BFA7-40E3-9855-20099B94C665} = {214EE669-3ED2-4A03-A9B9-1F71B4257FA6}
 		{33D4B918-DCF3-4A85-A353-ED141ECF7E3B} = {214EE669-3ED2-4A03-A9B9-1F71B4257FA6}
+		{17C5B501-C103-44E3-974E-DD209DEE3BB3} = {376E85B6-6E9D-43F1-903F-CB6F4305512A}
 	EndGlobalSection
 	GlobalSection(MonoDevelopProperties) = preSolution
 		StartupItem = Samples\MvcSample\MvcSample.csproj
