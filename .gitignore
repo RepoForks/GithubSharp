@@ -32,3 +32,4 @@ _ReSharper*/
 *.pidb
 *.userprefs
 *~
+*.nupkg
