@@ -3,6 +3,8 @@ using System.IO;
 using System.Runtime.Serialization.Json;
 using System.Text;
 using System.Web.Script.Serialization;
+using ServiceStack.Text;
+using ServiceStack.Text.Json;
 
 namespace GithubSharp.Core.Base
 {
@@ -13,7 +15,7 @@ namespace GithubSharp.Core.Base
         /// </summary>
         internal static string ToJson<T>(this T Obj)
         {
-            return new JavaScriptSerializer().Serialize(Obj);
+        	return Obj.ToJson();
         }
 
         /// <summary>
@@ -25,7 +27,7 @@ namespace GithubSharp.Core.Base
             if (string.IsNullOrEmpty(Json))
                 throw new ArgumentNullException("Json");
 
-            return new JavaScriptSerializer().Deserialize<T>(Json);
+        	return Json.FromJson<T>();
         }
     }
 }
